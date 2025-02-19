@@ -11,15 +11,25 @@ let package = Package(
     products: [
         .library(
             name: "CyberSourceFlexSDK",
-            targets: ["CyberSourceFlexSDK"]),
+            targets: ["CyberSourceFlexSDKSwift", "CyberSourceFlexSDKObjC"]),
     ],
     targets: [
         .target(
-            name: "CyberSourceFlexSDK",
+            name: "CyberSourceFlexSDKSwift",
             dependencies: [],
             path: "flex-api-ios-sdk",
             exclude: [],
-            sources: ["Swift", "ObjC"],  // Specify source directories
+            sources: ["Swift"],  // Specify source directories
+            resources: [
+                .process("Resources")  // Process all resources
+            ]
+        ),
+        .target(
+            name: "CyberSourceFlexSDKObjC",
+            dependencies: [],
+            path: "flex-api-ios-sdk",
+            exclude: [],
+            sources: ["ObjC"],  // Specify source directories
             resources: [
                 .process("Resources")  // Process all resources
             ],
@@ -30,6 +40,6 @@ let package = Package(
             swiftSettings: [
                 .define("SPM_BUILD")
             ]
-        )
+        ),
     ]
 )
