@@ -13,13 +13,23 @@ let package = Package(
             name: "CyberSourceFlexSDK",
             targets: ["CyberSourceFlexSDK"]),
     ],
-    dependencies: [
-        // Add any dependencies your SDK has
-    ],
     targets: [
         .target(
             name: "CyberSourceFlexSDK",
             dependencies: [],
-            path: "flex-api-ios-sdk")
+            path: "flex-api-ios-sdk",
+            exclude: [],
+            sources: ["Swift", "ObjC"],  // Specify source directories
+            resources: [
+                .process("Resources")  // Process all resources
+            ],
+            publicHeadersPath: "ObjC/include",
+            cSettings: [
+                .headerSearchPath("ObjC"),
+            ],
+            swiftSettings: [
+                .define("SPM_BUILD")
+            ]
+        )
     ]
 )
