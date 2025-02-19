@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "CyberSourceFlexSDKSwift",
-            dependencies: [],
+            dependencies: ["CyberSourceFlexSDKObjC"],
             path: "flex-api-ios-sdk",
             exclude: [],
             sources: ["Swift"],  // Specify source directories

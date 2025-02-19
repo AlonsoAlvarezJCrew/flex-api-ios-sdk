@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CybersourceFlexSDKPrivate
 
 class LongTermKey {
     static let sharedInstance = LongTermKey()

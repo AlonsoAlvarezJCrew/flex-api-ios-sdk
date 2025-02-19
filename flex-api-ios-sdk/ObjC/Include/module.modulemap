@@ -12,7 +12,7 @@
 //#endif /* module_h */
 
 module CybersourceFlexSDKPrivate {
-    header "../Internal/RSA/RSAUtils.h"
-    header "../Shared/AesGcm/Classes/CybsAGCipheredData.h"
-    header "../Shared/AesGcm/Classes/CybsAesGcm.h"
+    header "RSAUtils.h"
+    header "CybsAGCipheredData.h"
+    header "CybsAesGcm.h"
 }
